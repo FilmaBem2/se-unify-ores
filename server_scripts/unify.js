@@ -16,10 +16,11 @@ global["RECIPE_DEDUPE"] = true
 
 // Mod priorities
 global["unifypriorities"] = [
-    "techreborn",
+    "kubejs",
     "thermal",
     "mekanism",
     "create",
+    "techreborn",
     "assemblylinemachines",
     "futurepack",
     "tconstruct",
@@ -37,7 +38,10 @@ global["unifyexcludegen"] = [
 let tags = new Set([
     "forge:plates/iron",
     "forge:gears/iron",
-    "forge:silicon"
+    "forge:silicon",
+    "se4:silicon",
+    "appliedenergistics2:silicon",
+    "refinedstorage:silicon"
 ])
 
 // A list of lists of items to unify. Each list will be turned into a tag and added to the list of tags to unify.
@@ -62,7 +66,7 @@ let tagUnions = [
 let tagSplits = [
     // Makes it so that deepslate, netherrack, and stone ores are unified separately.
     [
-        "forge:ores/=copper,tin,aluminum,lead,silver,nickel,bronze,steel,platinum,uranium,iridium,zinc,osmium,sulfur",
+        "forge:ores/=copper,tin,aluminum,lead,silver,nickel,bronze,steel,platinum,uranium,iridium,zinc,osmium,sulfur,dark_steel,",
         "forge:ores_in_ground/=deepslate,netherrack",
         "forge:ores_in_ground/stone"
     ]
@@ -75,10 +79,10 @@ if (Platform.isForge()) {
     // Easier way to add multiple tags on forge (all items here are inserted into the tags set)
     let tagGen = [
         "gold,diamond=gears,plates",
-        "copper,tin,aluminum,lead,silver,nickel,bronze,steel,platinum,uranium,iridium,zinc"
+        "copper,tin,aluminum,lead,silver,nickel,bronze,steel,platinum,uranium,iridium,zinc,dark_steel"
         + "=storage_blocks,ingots,nuggets,dusts,ores,gears,plates,raw_materials",
         "raw_copper,raw_tin,raw_aluminum,raw_lead,raw_silver,raw_nickel,raw_bronze,raw_steel,raw_platinum,raw_uranium,raw_iridium,raw_zinc=storage_blocks",
-        "osmium=ingots,ores",
+        "osmium=ingots,ores,plates,gears,rods",
         "sulfur=dusts,ores",
         "netherite=dusts",
         "silicon=gems"
