@@ -17,8 +17,9 @@ global["RECIPE_DEDUPE"] = true
 // Mod priorities
 global["unifypriorities"] = [
     "kubejs",
-    "thermal",
     "mekanism",
+    "thermal",
+    "draconicevolution",
     "create",
     "techreborn",
     "assemblylinemachines",
